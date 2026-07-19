@@ -1,18 +1,38 @@
 # KEMET
 
-> AI-Powered Multi-Agent Finance Intelligence Platform
+> Production-grade Multi-Agent Finance Intelligence Platform built with Python.
 
-KEMET is an open-source platform that models how professional traders and portfolio managers make investment decisions using a collaborative team of specialized AI agents.
+KEMET is a Multi-Agent Finance Intelligence Platform that models how professional traders and portfolio managers make investment decisions using collaborative artificial intelligence.
 
-Instead of relying on a single AI model, KEMET divides the decision-making process into domain experts. Each expert analyzes one aspect of the market and publishes structured recommendations. A Portfolio Manager AI combines these recommendations into a final decision.
+Instead of relying on a single AI model, KEMET decomposes the investment process into a team of specialized AI agents. Each agent is responsible for a single domain of expertise and publishes structured recommendations. A Portfolio Manager Agent evaluates these recommendations and produces the final investment decision.
 
 KEMET is designed to be explainable, modular, scalable, and production-ready.
 
 ---
 
+# Why KEMET?
+
+Most AI trading systems rely on a single model making a single decision.
+
+Professional investment teams work differently.
+
+Technical analysts, economists, news analysts, and risk managers collaborate before any investment decision is made.
+
+KEMET models this collaborative decision-making process using specialized AI Agents.
+
+This architecture provides:
+
+- Explainable Decisions
+- Domain Expertise
+- Modular Design
+- Collective Intelligence
+- Continuous Improvement
+
+---
+
 # Vision
 
-Professional traders do not rely on a single indicator or one source of information.
+Professional traders never rely on a single indicator or one source of information.
 
 They combine:
 
@@ -24,11 +44,9 @@ They combine:
 - Capital Allocation
 - Experience
 
-KEMET follows the same philosophy.
+Professional investing is a collaborative decision-making process.
 
-Every responsibility is represented by a specialized AI Agent.
-
-The final decision is produced through collaboration—not by a single model.
+KEMET models that collaboration using AI Agents.
 
 ---
 
@@ -38,47 +56,68 @@ KEMET is **not** a trading bot.
 
 KEMET is a Finance Intelligence Platform.
 
-Its purpose is to model the structured decision-making process of professional traders and portfolio managers.
+Its purpose is to replicate the structured thinking process of professional traders and portfolio managers.
 
 Artificial Intelligence is the implementation technology—not the architecture.
 
 The architecture is inspired by real investment teams.
 
+KEMET separates domain expertise from decision making.
+
+---
+
+# Actors
+
+KEMET has only one human actor.
+
+- Account Owner
+
+The Account Owner defines:
+
+- Investment Objectives
+- Risk Preferences
+- Execution Permissions
+
+All remaining components are autonomous AI Agents collaborating to achieve those objectives.
+
 ---
 
 # Architecture Overview
 
-```
-                Market
-                   │
-                   ▼
-          Data Collection
-                   │
-                   ▼
-        Specialized AI Agents
-                   │
-                   ▼
-     Structured Recommendations
-                   │
-                   ▼
-         Portfolio Manager
-                   │
-                   ▼
-          Final Decision
-                   │
-                   ▼
-         Execution Engine
-                   │
-          ┌────────┴─────────┐
-          ▼                  ▼
-     Monitoring         Audit Logs
-          │                  │
-          └────────┬─────────┘
-                   ▼
-          Knowledge Sharing
-                   │
-                   ▼
-            Agents Improve
+```text
+                     Market
+                        │
+                        ▼
+               Data Collection
+                        │
+                        ▼
+          Specialized AI Agents
+                        │
+                        ▼
+              Recommendations
+                        │
+                        ▼
+          Recommendation Events
+                        │
+                        ▼
+          Portfolio Manager Agent
+                        │
+                        ▼
+              Final Decision
+                        │
+                        ▼
+             Execution Engine
+                        │
+             ┌──────────┴──────────┐
+             ▼                     ▼
+        Monitoring            Audit Logs
+             │                     │
+             └──────────┬──────────┘
+                        ▼
+               Knowledge Sharing
+                        │
+                        ▼
+                 Agents Improve
 ```
 
 ---
@@ -88,8 +127,9 @@ The architecture is inspired by real investment teams.
 - Multi-Agent Architecture
 - Domain-Driven Design
 - Event-Driven Communication
+- Recommendation-Based Collaboration
 - Explainable AI
-- Risk First
+- Risk-First Design
 - Human-in-the-Loop
 - Knowledge Sharing
 - Production-Ready Engineering
@@ -101,7 +141,7 @@ The architecture is inspired by real investment teams.
 
 Current planned agents include:
 
-- Portfolio Manager
+- Portfolio Manager Agent
 - News Agent
 - Economic Calendar Agent
 - Technical Analysis Agent
@@ -111,10 +151,10 @@ Current planned agents include:
 - Sentiment Agent
 - TradingView Agent
 - Monitoring Agent
-- Learning Agent
+- Mentor Agent
 - Audit Agent
 
-More agents can be added through the plugin system.
+The platform is designed to support additional agents through a plugin-based architecture.
 
 ---
 
@@ -122,11 +162,13 @@ More agents can be added through the plugin system.
 
 Agents never control each other.
 
-Agents never execute trades.
+Agents never execute trades independently.
 
-Agents publish structured knowledge and recommendations.
+Every Expert Agent publishes structured Recommendations.
 
-The Portfolio Manager evaluates every recommendation before making a final decision.
+Recommendations are transported through Recommendation Events over the internal Event Bus.
+
+The Portfolio Manager Agent evaluates every recommendation before producing the final investment decision.
 
 This architecture enables Collective Intelligence while preserving the independence of every agent.
 
@@ -138,11 +180,10 @@ This architecture enables Collective Intelligence while preserving the independe
 
 - Python
 - FastAPI
-- Flet
 - SQLAlchemy
 - PostgreSQL
 
-## Frontend
+## Desktop Application
 
 - Flet
 
@@ -153,11 +194,14 @@ This architecture enables Collective Intelligence while preserving the independe
 - Linux
 - GitHub Actions
 
-## AI
+## LLM Providers
 
 - OpenAI
 - Ollama
-- HuggingFace
+- Hugging Face
+
+## AI Frameworks
+
 - LangChain
 - MCP
 
@@ -165,7 +209,7 @@ This architecture enables Collective Intelligence while preserving the independe
 
 # Project Structure
 
-```
+```text
 docs/
 src/
 tests/
@@ -178,26 +222,30 @@ configs/
 
 # Project Status
 
-Current Stage
+Current Sprint
 
-Planning & Architecture
+✅ Sprint 0 — Foundation & Architecture
 
-Next Milestone
+Next Sprint
 
-Project Foundation
+🚀 Sprint 1 — Core Domain Implementation
 
 ---
 
 # Roadmap
 
-- Project Foundation
-- Core Framework
-- AI Agent System
-- Portfolio Manager
-- Trading Engine
-- Learning System
-- Monitoring
-- Cloud Deployment
+- Sprint 0 — Foundation & Architecture
+- Sprint 1 — Core Domain
+- Sprint 2 — Application Layer
+- Sprint 3 — Expert Agents
+- Sprint 4 — Portfolio Manager
+- Sprint 5 — Knowledge Sharing
+- Sprint 6 — Learning System
+- Sprint 7 — Execution Engine
+- Sprint 8 — Desktop Platform
+- Sprint 9 — Monitoring & Audit
+- Sprint 10 — Cloud Deployment
+- Sprint 11 — Production Release
 
 More details are available in **docs/roadmap.md**
 
@@ -205,25 +253,45 @@ More details are available in **docs/roadmap.md**
 
 # Goals
 
-- Build a production-grade AI platform.
+- Build a production-grade AI Finance Platform.
 - Demonstrate advanced Python architecture.
 - Showcase AI Engineering best practices.
 - Build an extensible Multi-Agent Framework.
-- Apply modern software engineering principles.
+- Apply Domain-Driven Design and Event-Driven Architecture.
+- Model professional investment decision making using collaborative AI.
+
+---
+
+# Documentation
+
+Project documentation is available under the `docs/` directory.
+
+Key documents include:
+
+- Vision
+- Roadmap
+- Architecture
+- Domain Model
+- Decisions
+- ADRs
+- Glossary
+- Session Journal
 
 ---
 
 # License
 
-MIT License
+License selection is postponed until the first public release.
 
 ---
 
 # Author
 
-Ahmed Samir
+Designed and developed by
 
-GitHub
+**Ahmed Samir**
+
+GitHub:
 
 https://github.com/ahmedsamirhefny
 
@@ -231,4 +299,4 @@ https://github.com/ahmedsamirhefny
 
 > KEMET does not attempt to replace traders.
 
-> It attempts to replicate the structured thinking process of professional traders using collaborative artificial intelligence.
+> It attempts to model the structured thinking process of professional traders and portfolio managers using collaborative artificial intelligence.
